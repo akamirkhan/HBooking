@@ -1,41 +1,46 @@
-//
-//  HotelScreen.swift
-//  HBooking
-//
-//  Created by Amirkhan Akaev on 16.12.2023.
-//
-
 import SwiftUI
 
 struct HotelScreen: View {
+    @StateObject var viewModel: HotelScreenModel
+    
     var body: some View {
-        NavigationView {
+        viewModel.viewState
+            .default(content: contentView, action: viewModel.getHotel)
+            .navigationTitle("Отель")
+    }
+    
+    private var contentView: some View {
+        ZStack {
+            Color.secondaryBackgroundColor
+            content
+        }
+        .background(Color.white.ignoresSafeArea())
+    }
+    
+    private var content: some View {
+        ScrollView {
             VStack(spacing: 16) {
-                titleView
-                contentView
-                SelectButton(title: "К выбору номера") {}
-                    .padding(.horizontal, 16)
+                HotelHeaderView(model: viewModel.model)
+                HotelContentView(model: viewModel.model)
+                selectRoomButton
             }
         }
     }
     
-    private var contentView: some View {
-        ScrollView {
-            HotelView()
-            AboutHotelView()
+    private var selectRoomButton: some View {
+        VStack {
+            Divider()
+            PrimaryButton(title: "К выбору номера", action: viewModel.selectRoomAction)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
         }
-        .background(Color.secondaryBackgroundColor)
+        .background(Color.white)
     }
-    
-    private var titleView: some View {
-        Text("Отель")
-            .font(.system(size: 16, weight: .medium))
-    }
-    
+
 }
 
-struct HotelScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HotelScreen()
+#Preview {
+    NavigationView {
+        HotelScreen(viewModel: .init(coordinator: .init()))
     }
 }
