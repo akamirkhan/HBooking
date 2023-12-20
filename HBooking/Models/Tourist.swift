@@ -1,10 +1,3 @@
-//
-//  Tourist.swift
-//  HBooking
-//
-//  Created by Amirkhan Akaev on 18.12.2023.
-//
-
 import SwiftUI
 
 struct Tourist: Identifiable {
