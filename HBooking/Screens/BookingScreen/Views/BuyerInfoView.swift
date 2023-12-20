@@ -1,55 +1,40 @@
-//
-//  BuyerInfoView.swift
-//  HBooking
-//
-//  Created by Amirkhan Akaev on 17.12.2023.
-//
-
 import SwiftUI
 
 struct BuyerInfoView: View {
-    
-    @StateObject var viewModel: BookingScreenModel
+    @Binding var phoneNumber: String
+    @Binding var email: String
     
     var body: some View {
         contentView
+            .padding(16)
+            .background(Color.white)
+            .cornerRadius(12)
     }
     
     private var contentView: some View {
-        VStack(spacing: 16) {
-            TitleTextView(title: "Информация о покупателе")
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Информация о покупателе")
+                .font(.hTitle)
             
-            textFieldView
+            VStack(alignment: .leading, spacing: 8) {
+                TextFieldView(title: "Номер телефона", text: $phoneNumber)
+                TextFieldView(title: "Почта", text: $email)
+                descriptionView
+            }
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(12)
     }
     
-    private var textFieldView: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            TextFieldView(
-                title: "Номер телефона",
-                text: $viewModel.phoneNumber
-            )
-            
-            TextFieldView(
-                title: "Почта",
-                text: $viewModel.mail
-            )
-            
-            Text("Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту")
-                .font(.sfPro(size: 14))
-                .foregroundColor(.subtitleColor)
-        }
+    private var descriptionView: some View {
+        Text("Эти данные никому не передаются. После оплаты мы вышлем чек на указанный вами номер и почту")
+            .font(.sfPro(size: 14))
+            .foregroundColor(.subtitleColor)
     }
+
 }
 
-struct BuyerInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrollView {
-            BuyerInfoView(viewModel: .init())
-        }
-        .background(Color.secondaryBackgroundColor)
+#Preview {
+    ZStack {
+        Color.secondaryBackgroundColor
+        BuyerInfoView(phoneNumber: .constant(""), email: .constant(""))
     }
 }

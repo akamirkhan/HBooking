@@ -1,10 +1,3 @@
-//
-//  BookingScreen.swift
-//  HBooking
-//
-//  Created by Amirkhan Akaev on 17.12.2023.
-//
-
 import SwiftUI
 
 struct BookingScreen: View {
@@ -12,23 +5,54 @@ struct BookingScreen: View {
     @StateObject var viewModel: BookingScreenModel
     
     var body: some View {
-        contentView
+        viewModel.viewState
+            .default(content: contentView, action: viewModel.getTour)
+            .background(Color.secondaryBackgroundColor)
+            .navigationTitle("Бронирование")
     }
     
     private var contentView: some View {
         ScrollView {
-            InfoHotelView()
-                .padding(.horizontal, 16)
-                .background(Color.white)
-                .cornerRadius(12)
-            BuyerInfoView(viewModel: viewModel)
+            VStack(spacing: 8) {
+                HotelMainInfoView(model: viewModel.model.mainInfo)
+                    .padding(16)
+                    .background(Color.white)
+                    .cornerRadius(12)
+                
+                BookingDetailsList(details: viewModel.model.details)
+                BuyerInfoView(phoneNumber: $viewModel.model.phoneNumber, email: $viewModel.model.email)
+                touristsView
+                AddTouristButton(action: viewModel.addNewTourist)
+                BookingDetailsList(details: viewModel.model.expenses, textAlignment: .trailing)
+                payButton
+            }
         }
-        .background(Color.secondaryBackgroundColor)
+        
     }
+    
+    private var touristsView: some View {
+        VStack(spacing: 8) {
+            ForEach(viewModel.model.tourists.indices, id: \.self) { index in
+                TouristView(
+                    model: $viewModel.model.tourists[index],
+                    title: viewModel.titleForTourist(index)
+                )
+            }
+        }
+    }
+    
+    private var payButton: some View {
+        VStack {
+            Divider()
+            PrimaryButton(title: "Оплатить \(viewModel.model.price)", action: viewModel.payAction)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+        }
+        .background(Color.white)
+    }
+
 }
 
-struct BookingScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        BookingScreen(viewModel: .init())
-    }
+#Preview {
+    BookingScreen(viewModel: .init(coordinator: .init()))
 }
