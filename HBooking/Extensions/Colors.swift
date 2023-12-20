@@ -1,10 +1,3 @@
-//
-//  Color+Extensions.swift
-//  HBooking
-//
-//  Created by Amirkhan Akaev on 16.12.2023.
-//
-
 import SwiftUI
 
 extension Color {
@@ -21,10 +14,6 @@ extension Color {
         Color(#function, bundle: .main)
     }
     
-    static var dividerColor: Color {
-        Color(#function, bundle: .main)
-    }
-    
     static var textFieldBackgroundColor: Color {
         Color(#function, bundle: .main)
     }
@@ -38,10 +27,6 @@ extension Color {
     }
     
     static var optionsBackgroundColor: Color {
-        Color(#function, bundle: .main)
-    }
-    
-    static var optionsTitleColor: Color {
         Color(#function, bundle: .main)
     }
     
