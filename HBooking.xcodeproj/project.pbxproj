@@ -67,6 +67,7 @@
 		FD873E672B2E0C1200DFB89C /* HotelInfoListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD873E662B2E0C1100DFB89C /* HotelInfoListItemModel.swift */; };
 		FD873E6B2B2E251E00DFB89C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD873E6A2B2E251E00DFB89C /* PrimaryButton.swift */; };
 		FD873E6D2B2E256F00DFB89C /* ClosureAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD873E6C2B2E256F00DFB89C /* ClosureAliases.swift */; };
+		FDCBED9E2B349A5700BEFB8C /* PinnedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCBED9D2B349A5700BEFB8C /* PinnedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		FD873E662B2E0C1100DFB89C /* HotelInfoListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelInfoListItemModel.swift; sourceTree = "<group>"; };
 		FD873E6A2B2E251E00DFB89C /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		FD873E6C2B2E256F00DFB89C /* ClosureAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureAliases.swift; sourceTree = "<group>"; };
+		FDCBED9D2B349A5700BEFB8C /* PinnedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,10 +417,11 @@
 			children = (
 				121314C02B31DECB004363EE /* PriceView */,
 				121314BD2B31DC31004363EE /* HotelMainInfoView */,
+				1213150F2B339C01004363EE /* ImageCarousel */,
 				FD873E6A2B2E251E00DFB89C /* PrimaryButton.swift */,
 				121314BB2B31DBA3004363EE /* RatingView.swift */,
+				FDCBED9D2B349A5700BEFB8C /* PinnedButton.swift */,
 				121314C82B31F635004363EE /* FlowLayout.swift */,
-				1213150F2B339C01004363EE /* ImageCarousel */,
 				121314CE2B31FDA1004363EE /* TagsView.swift */,
 				FD45A9CD2B2F283300059E53 /* TextFieldView.swift */,
 			);
@@ -567,6 +570,7 @@
 				FD873E3A2B2DB3D600DFB89C /* HotelMainInfoView.swift in Sources */,
 				121315002B33913A004363EE /* NetworkError.swift in Sources */,
 				121314CB2B31FBF2004363EE /* RoomViewModel.swift in Sources */,
+				FDCBED9E2B349A5700BEFB8C /* PinnedButton.swift in Sources */,
 				121314BC2B31DBA3004363EE /* RatingView.swift in Sources */,
 				121315062B3391F7004363EE /* Encodable.swift in Sources */,
 			);

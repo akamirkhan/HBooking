@@ -12,22 +12,24 @@ struct BookingScreen: View {
     }
     
     private var contentView: some View {
-        ScrollView {
-            VStack(spacing: 8) {
-                HotelMainInfoView(model: viewModel.model.mainInfo)
-                    .padding(16)
-                    .background(Color.white)
-                    .cornerRadius(12)
-                
-                BookingDetailsList(details: viewModel.model.details)
-                BuyerInfoView(phoneNumber: $viewModel.model.phoneNumber, email: $viewModel.model.email)
-                touristsView
-                AddTouristButton(action: viewModel.addNewTourist)
-                BookingDetailsList(details: viewModel.model.expenses, textAlignment: .trailing)
-                payButton
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 8) {
+                    HotelMainInfoView(model: viewModel.model.mainInfo)
+                        .padding(16)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                    
+                    BookingDetailsList(details: viewModel.model.details)
+                    BuyerInfoView(phoneNumber: $viewModel.model.phoneNumber, email: $viewModel.model.email)
+                    touristsView
+                    AddTouristButton(action: viewModel.addNewTourist)
+                    BookingDetailsList(details: viewModel.model.expenses, textAlignment: .trailing)
+                }
             }
+            
+            PinnedButton(title: "Оплатить \(viewModel.model.price)", action: viewModel.payAction)
         }
-        
     }
     
     private var touristsView: some View {
@@ -41,16 +43,6 @@ struct BookingScreen: View {
         }
     }
     
-    private var payButton: some View {
-        VStack {
-            Divider()
-            PrimaryButton(title: "Оплатить \(viewModel.model.price)", action: viewModel.payAction)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 12)
-        }
-        .background(Color.white)
-    }
-
 }
 
 #Preview {

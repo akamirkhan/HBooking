@@ -18,25 +18,20 @@ struct HotelScreen: View {
     }
     
     private var content: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                HotelHeaderView(model: viewModel.model)
-                HotelContentView(model: viewModel.model)
-                selectRoomButton
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(spacing: 16) {
+                    HotelHeaderView(model: viewModel.model)
+                    HotelContentView(model: viewModel.model)
+                }
+            }
+            
+            PinnedButton(title: "К выбору номера") {
+                viewModel.selectRoomAction(model: viewModel.model)
             }
         }
     }
     
-    private var selectRoomButton: some View {
-        VStack {
-            Divider()
-            PrimaryButton(title: "К выбору номера", action: viewModel.selectRoomAction)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 12)
-        }
-        .background(Color.white)
-    }
-
 }
 
 #Preview {

@@ -14,7 +14,7 @@ struct HotelBookedScreen: View {
             partyPopperView
             orderInfoView
             Spacer()
-            superButton
+            PinnedButton(title: "Супер", action: viewModel.superAction)
         }
     }
     
@@ -37,16 +37,6 @@ struct HotelBookedScreen: View {
         }
         .multilineTextAlignment(.center)
         .padding(.horizontal, 16)
-    }
-    
-    private var superButton: some View {
-        VStack {
-            Divider()
-            PrimaryButton(title: "Супер", action: viewModel.superAction)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 12)
-        }
-        .background(Color.white)
     }
     
 }
