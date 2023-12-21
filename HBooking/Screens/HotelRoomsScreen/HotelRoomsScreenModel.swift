@@ -8,10 +8,12 @@ final class HotelRoomsScreenModel: ObservableObject {
     private let coordinator: Coordinator
     private let hotelService: HotelService
     private var cancellable: AnyCancellable?
+    let hotelName: String
     
-    init(coordinator: Coordinator, hotelService: HotelService = .init()) {
+    init(coordinator: Coordinator, hotelName: String, hotelService: HotelService = .init()) {
         self.coordinator = coordinator
         self.hotelService = hotelService
+        self.hotelName = hotelName
         
         getRooms()
     }

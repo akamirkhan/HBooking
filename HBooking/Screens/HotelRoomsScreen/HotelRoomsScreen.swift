@@ -7,7 +7,7 @@ struct HotelRoomsScreen: View {
         viewModel.viewState
             .default(content: contentView, action: viewModel.getRooms)
             .background(Color.secondaryBackgroundColor)
-            .navigationTitle("Test")
+            .navigationTitle(viewModel.hotelName)
     }
     
     private var contentView: some View {
@@ -23,5 +23,10 @@ struct HotelRoomsScreen: View {
 }
 
 #Preview {
-    HotelRoomsScreen(viewModel: .init(coordinator: .init()))
+    HotelRoomsScreen(
+        viewModel: .init(
+            coordinator: .init(),
+            hotelName: "Steigenberger Makadi"
+        )
+    )
 }

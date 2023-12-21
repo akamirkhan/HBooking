@@ -1,11 +1,7 @@
 import SwiftUI
 
-enum Screen: String, Identifiable, Hashable {
-    case hotel, rooms, booking, purchase
-    
-    var id: String {
-        rawValue
-    }
+enum Screen: Hashable {
+    case hotel, rooms(hotel: String), booking, purchase
 }
 
 final class Coordinator: ObservableObject {
@@ -25,8 +21,8 @@ final class Coordinator: ObservableObject {
         switch screen {
         case .hotel:
             HotelScreen(viewModel: .init(coordinator: self))
-        case .rooms:
-            HotelRoomsScreen(viewModel: .init(coordinator: self))
+        case .rooms(let hotel):
+            HotelRoomsScreen(viewModel: .init(coordinator: self, hotelName: hotel))
         case .booking:
             BookingScreen(viewModel: .init(coordinator: self))
         case .purchase:

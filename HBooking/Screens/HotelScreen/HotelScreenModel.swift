@@ -29,8 +29,8 @@ final class HotelScreenModel: ObservableObject {
             }
     }
     
-    func selectRoomAction() {
-        coordinator.push(.rooms)
+    func selectRoomAction(model: HotelModel) {
+        coordinator.push(.rooms(hotel: model.mainInfo.name))
     }
-
+    
 }
