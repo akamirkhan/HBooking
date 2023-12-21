@@ -18,6 +18,10 @@ extension Color {
         Color(#function, bundle: .main)
     }
     
+    static var errorBackgroundColor: Color {
+        Color(#function, bundle: .main)
+    }
+    
     static var textFieldForegroundColor: Color {
         Color(#function, bundle: .main)
     }
