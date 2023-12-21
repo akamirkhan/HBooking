@@ -37,7 +37,8 @@ struct BookingScreen: View {
             ForEach(viewModel.model.tourists.indices, id: \.self) { index in
                 TouristView(
                     model: $viewModel.model.tourists[index],
-                    title: viewModel.titleForTourist(index)
+                    title: viewModel.titleForTourist(index),
+                    fieldsValidator: viewModel.fieldsValidator
                 )
             }
         }

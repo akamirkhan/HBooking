@@ -9,6 +9,16 @@ struct TouristModel: Identifiable {
     var passportNumber: String
     var passportValidity: String
     
+    var isAllDataValid: Bool {
+        name.isNotEmpty &&
+        surname.isNotEmpty &&
+        surname.isNotEmpty &&
+        birthDate.isNotEmpty &&
+        citizenship.isNotEmpty &&
+        passportNumber.isNotEmpty &&
+        passportValidity.isNotEmpty
+    }
+    
     static var example: Self {
         TouristModel(
             name: "Иван",

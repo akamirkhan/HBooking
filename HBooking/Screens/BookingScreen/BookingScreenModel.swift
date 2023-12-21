@@ -8,6 +8,7 @@ final class BookingScreenModel: ObservableObject {
     private let coordinator: Coordinator
     private let hotelService: HotelService
     private var cancellable: AnyCancellable?
+    let fieldsValidator = PassthroughSubject<Void, Never>()
     
     init(coordinator: Coordinator, hotelService: HotelService = .init()) {
         self.coordinator = coordinator
@@ -31,6 +32,11 @@ final class BookingScreenModel: ObservableObject {
     }
 
     func payAction() {
+        guard model.tourists.allSatisfy(\.isAllDataValid) else {
+            fieldsValidator.send()
+            return
+        }
+        
         coordinator.push(.purchase)
     }
     
