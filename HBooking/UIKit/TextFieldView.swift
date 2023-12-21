@@ -6,25 +6,40 @@ struct TextFieldView: View {
     @Binding var text: String
     
     var body: some View {
+        contentView
+    }
+    
+    private var contentView: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(title)
-                .font(.sfPro(size: 12))
-                .foregroundColor(.textFieldTitleColor)
-            
+            titleView
             TextField("", text: $text)
-                .font(.sfPro(size: 16))
                 .foregroundColor(.textFieldForegroundColor)
+                .placeholder(when: text.isEmpty) {
+                    Text(title)
+                        .font(.sfPro(size: 17))
+                }
+                .font(.sfPro(size: 16))
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 10)
+        .padding(.leading, 16)
+        .frame(height: 52)
+        .foregroundColor(.textFieldTitleColor)
         .background(Color.textFieldBackgroundColor)
         .cornerRadius(12)
     }
+    
+    @ViewBuilder
+    private var titleView: some View {
+        if !text.isEmpty {
+            Text(title)
+                .font(.sfPro(size: 12))
+        }
+    }
+    
 }
 
 #Preview {
-    StatefulPreviewWrapper("+7 (999) 999-99-32") { text in
-        TextFieldView(title: "номер телефона", text: text)
+    StatefulPreviewWrapper("") { text in
+        TextFieldView(title: "Номер телефона", text: text)
             .padding(.horizontal, 16)
     }
 }
