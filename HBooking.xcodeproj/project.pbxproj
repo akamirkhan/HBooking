@@ -46,6 +46,7 @@
 		1231B95E2B34DC840062EF95 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231B95D2B34DC840062EF95 /* String.swift */; };
 		1231B9602B34F5C00062EF95 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231B95F2B34F5C00062EF95 /* TextFieldViewModel.swift */; };
 		124CA8ED2B361CC400F0F1A4 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CA8EC2B361CC400F0F1A4 /* Formatter.swift */; };
+		124CA8EF2B36243500F0F1A4 /* PhoneNumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CA8EE2B36243500F0F1A4 /* PhoneNumberField.swift */; };
 		FD2028F92B30A48000A1599B /* BookingScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2028F82B30A48000A1599B /* BookingScreenModel.swift */; };
 		FD2028FB2B30AF1B00A1599B /* TouristView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2028FA2B30AF1B00A1599B /* TouristView.swift */; };
 		FD2028FD2B30BE8F00A1599B /* Tourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2028FC2B30BE8F00A1599B /* Tourist.swift */; };
@@ -115,6 +116,7 @@
 		1231B95D2B34DC840062EF95 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1231B95F2B34F5C00062EF95 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		124CA8EC2B361CC400F0F1A4 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		124CA8EE2B36243500F0F1A4 /* PhoneNumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberField.swift; sourceTree = "<group>"; };
 		FD2028F82B30A48000A1599B /* BookingScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingScreenModel.swift; sourceTree = "<group>"; };
 		FD2028FA2B30AF1B00A1599B /* TouristView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristView.swift; sourceTree = "<group>"; };
 		FD2028FC2B30BE8F00A1599B /* Tourist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tourist.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				121314C82B31F635004363EE /* FlowLayout.swift */,
 				121314CE2B31FDA1004363EE /* TagsView.swift */,
 				1231B9612B34F5D70062EF95 /* TextFieldView */,
+				124CA8EE2B36243500F0F1A4 /* PhoneNumberField.swift */,
 				1212CA372B374795009695A5 /* BaseTextField.swift */,
 				1212CA392B374800009695A5 /* EmailTextField.swift */,
 			);
@@ -608,6 +611,7 @@
 				121314BF2B31DC39004363EE /* HotelMainInfoModel.swift in Sources */,
 				121314E82B336DD1004363EE /* HotelBookedScreenModel.swift in Sources */,
 				FD873E3A2B2DB3D600DFB89C /* HotelMainInfoView.swift in Sources */,
+				124CA8EF2B36243500F0F1A4 /* PhoneNumberField.swift in Sources */,
 				121315002B33913A004363EE /* NetworkError.swift in Sources */,
 				121314CB2B31FBF2004363EE /* RoomViewModel.swift in Sources */,
 				FDCBED9E2B349A5700BEFB8C /* PinnedButton.swift in Sources */,
