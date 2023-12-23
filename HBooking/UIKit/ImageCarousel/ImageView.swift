@@ -17,6 +17,8 @@ struct ImageView: View {
                 .resizable()
                 .placeholder { _ in
                     ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.secondaryBackgroundColor)
                 }
                 .onFailure { _ in
                     isFailed = true
