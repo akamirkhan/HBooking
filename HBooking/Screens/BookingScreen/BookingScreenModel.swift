@@ -45,7 +45,7 @@ final class BookingScreenModel: ObservableObject {
     }
     
     func titleForTourist(_ index: Int) -> String {
-        "1 Турист"
+        "\((index + 1).formatNumber) Турист"
     }
 
 }
