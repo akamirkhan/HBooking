@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1212CA382B374795009695A5 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212CA372B374795009695A5 /* BaseTextField.swift */; };
+		1212CA3A2B374800009695A5 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212CA392B374800009695A5 /* EmailTextField.swift */; };
 		1212CA3C2B375155009695A5 /* BuyerInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212CA3B2B375155009695A5 /* BuyerInfoModel.swift */; };
 		121314BC2B31DBA3004363EE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121314BB2B31DBA3004363EE /* RatingView.swift */; };
 		121314BF2B31DC39004363EE /* HotelMainInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121314BE2B31DC39004363EE /* HotelMainInfoModel.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		1212CA372B374795009695A5 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		1212CA392B374800009695A5 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		1212CA3B2B375155009695A5 /* BuyerInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerInfoModel.swift; sourceTree = "<group>"; };
 		121314BB2B31DBA3004363EE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		121314BE2B31DC39004363EE /* HotelMainInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMainInfoModel.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				121314CE2B31FDA1004363EE /* TagsView.swift */,
 				1231B9612B34F5D70062EF95 /* TextFieldView */,
 				1212CA372B374795009695A5 /* BaseTextField.swift */,
+				1212CA392B374800009695A5 /* EmailTextField.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				121314CD2B31FCE7004363EE /* ImageCarousel.swift in Sources */,
 				1212CA382B374795009695A5 /* BaseTextField.swift in Sources */,
 				121314CF2B31FDA1004363EE /* TagsView.swift in Sources */,
+				1212CA3A2B374800009695A5 /* EmailTextField.swift in Sources */,
 				FD873E6D2B2E256F00DFB89C /* ClosureAliases.swift in Sources */,
 				1213150A2B33939F004363EE /* HotelService.swift in Sources */,
 				121314EB2B3375A3004363EE /* TravelExpenses.swift in Sources */,
