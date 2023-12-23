@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 final class TextFieldViewModel: ObservableObject {
-    @Published var hasError = false
+    @Published var isDataValid = true
     @Published var text: String
     
     private var cancellable: AnyCancellable?
@@ -15,7 +15,7 @@ final class TextFieldViewModel: ObservableObject {
         self.fieldsValidator = fieldsValidator
         
         cancellable = fieldsValidator.sink { [unowned self] _ in
-            hasError = text.isEmpty
+            isDataValid = text.isNotEmpty
         }
     }
 }

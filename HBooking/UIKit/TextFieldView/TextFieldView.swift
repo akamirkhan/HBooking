@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct TextFieldView: View {
-    @FocusState private var isFocused: Bool
     @ObservedObject var viewModel: TextFieldViewModel
     
     var body: some View {
@@ -9,32 +8,12 @@ struct TextFieldView: View {
     }
     
     private var contentView: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            titleView
-            TextField("", text: $viewModel.text)
-                .focused($isFocused)
-                .foregroundColor(.textFieldForegroundColor)
-                .font(.sfPro(size: 16))
-                .onChange(of: isFocused) { _, _ in
-                    viewModel.hasError = false
-                }
-                .placeholder(when: !isFocused) {
-                    Text(viewModel.title)
-                        .font(.sfPro(size: 17))
-                }
-        }
-        .padding(.leading, 16)
-        .frame(height: 52)
-        .foregroundColor(.textFieldTitleColor)
-        .background(viewModel.hasError ? Color.errorBackgroundColor : Color.textFieldBackgroundColor)
-        .cornerRadius(12)
-    }
-    
-    @ViewBuilder
-    private var titleView: some View {
-        if isFocused {
-            Text(viewModel.title)
-                .font(.sfPro(size: 12))
+        BaseTextField(
+            text: $viewModel.text,
+            isDataValid: $viewModel.isDataValid,
+            title: viewModel.title
+        ) { _ in
+            viewModel.isDataValid = false
         }
     }
     
@@ -44,5 +23,33 @@ struct TextFieldView: View {
     StatefulPreviewWrapper("") { text in
         TextFieldView(viewModel: .init(title: "Имя", text: "", fieldsValidator: .init()))
             .padding(.horizontal, 16)
+    }
+}
+
+struct TextFieldFormat {
+    
+    static func format(_ mask: TextFieldMask, text: String) -> String {
+        let numbers = text.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = text.count == 1 ? "+7" : ""
+        var index = numbers.startIndex
+
+        for character in mask.rawValue where index < numbers.endIndex {
+            if character == "X" {
+                result.append(numbers[index])
+                index = numbers.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        
+        return result
+    }
+}
+
+enum TextFieldMask: String {
+    case phone = "+X (XXX) XXX-XX-XX"
+    
+    var symbols: Int {
+        self.rawValue.count
     }
 }
