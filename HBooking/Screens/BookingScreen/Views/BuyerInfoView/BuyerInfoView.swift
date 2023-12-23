@@ -16,7 +16,8 @@ struct BuyerInfoView: View {
                 .font(.hTitle)
             
             VStack(alignment: .leading, spacing: 8) {
-                EmailTextField(model: $model, title: "Почта")
+                PhoneNumberField(model: $model)
+                EmailTextField(model: $model)
                 descriptionView
             }
         }

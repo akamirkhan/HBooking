@@ -1,4 +1,5 @@
 import Combine
+import SwiftUI
 
 final class BookingScreenModel: ObservableObject {
     
@@ -32,8 +33,10 @@ final class BookingScreenModel: ObservableObject {
     }
 
     func payAction() {
-        guard model.tourists.allSatisfy(\.isAllDataValid) else {
-            fieldsValidator.send()
+        guard model.buyerInfoModel.isFieldsValid && model.tourists.allSatisfy(\.isAllDataValid) else {
+            model.buyerInfoModel.validateFields()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { self.fieldsValidator.send() }
+
             return
         }
         
