@@ -1,10 +1,3 @@
-//
-//  ImageView.swift
-//  HBooking
-//
-//  Created by Ibragim Akaev on 12/21/23.
-//
-
 import SwiftUI
 import Kingfisher
 
