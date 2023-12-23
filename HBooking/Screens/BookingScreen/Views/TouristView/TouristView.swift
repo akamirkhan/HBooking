@@ -33,6 +33,7 @@ struct TouristView: View {
         }
         .padding(.vertical, 13)
         .padding(.horizontal, 16)
+        .background()
         .onTapGesture {
             expanded.toggle()
         }
@@ -42,12 +43,12 @@ struct TouristView: View {
     private var contentView: some View {
         if expanded {
             VStack(spacing: 8) {
-                TextFieldView(viewModel: .init(title: "Имя", text: model.name, fieldsValidator: fieldsValidator))
-                TextFieldView(viewModel: .init(title: "Фамилия", text: model.surname, fieldsValidator: fieldsValidator))
-                TextFieldView(viewModel: .init(title: "Дата рождения", text: model.birthDate, fieldsValidator: fieldsValidator))
-                TextFieldView(viewModel: .init(title: "Гражданство", text: model.citizenship, fieldsValidator: fieldsValidator))
-                TextFieldView(viewModel: .init(title: "Номер загранпаспорта", text: model.passportNumber, fieldsValidator: fieldsValidator))
-                TextFieldView(viewModel: .init(title: "Срок действия загранпаспорта", text: model.passportValidity, fieldsValidator: fieldsValidator))
+                TextFieldView(viewModel: .init(title: "Имя", text: model.name, fieldsValidator: fieldsValidator) { model.name = $0 })
+                TextFieldView(viewModel: .init(title: "Фамилия", text: model.surname, fieldsValidator: fieldsValidator) { model.surname = $0 })
+                TextFieldView(viewModel: .init(title: "Дата рождения", text: model.birthDate, fieldsValidator: fieldsValidator) { model.birthDate = $0 })
+                TextFieldView(viewModel: .init(title: "Гражданство", text: model.citizenship, fieldsValidator: fieldsValidator) { model.citizenship = $0 })
+                TextFieldView(viewModel: .init(title: "Номер загранпаспорта", text: model.passportNumber, fieldsValidator: fieldsValidator) { model.passportNumber = $0 })
+                TextFieldView(viewModel: .init(title: "Срок действия загранпаспорта", text: model.passportValidity, fieldsValidator: fieldsValidator) { model.passportValidity = $0 })
             }
             .padding([.horizontal, .bottom], 16)
         }
