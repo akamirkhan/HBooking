@@ -36,6 +36,7 @@ extension TourDTO {
         }
         
         return HotelBookingScreenModel(
+            buyerInfoModel: BuyerInfoModel(),
             mainInfo: HotelMainInfoModel(
                 rating: "\(horating) \(ratingName)",
                 name: hotelName,

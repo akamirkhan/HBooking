@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct BuyerInfoView: View {
-    @Binding var phoneNumber: String
-    @Binding var email: String
+    @Binding var model: BuyerInfoModel
     
     var body: some View {
         contentView
@@ -17,8 +16,7 @@ struct BuyerInfoView: View {
                 .font(.hTitle)
             
             VStack(alignment: .leading, spacing: 8) {
-                TextFieldView(title: "Номер телефона", text: $phoneNumber)
-                TextFieldView(title: "Почта", text: $email)
+                EmailTextField(model: $model, title: "Почта")
                 descriptionView
             }
         }
@@ -33,8 +31,10 @@ struct BuyerInfoView: View {
 }
 
 #Preview {
-    ZStack {
-        Color.secondaryBackgroundColor
-        BuyerInfoView(phoneNumber: .constant(""), email: .constant(""))
+    StatefulPreviewWrapper(BuyerInfoModel()) { model in
+        ZStack {
+            Color.secondaryBackgroundColor
+            BuyerInfoView(model: model)
+        }
     }
 }

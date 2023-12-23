@@ -1,8 +1,7 @@
 import Foundation
 
 struct HotelBookingScreenModel {
-    var phoneNumber: String = ""
-    var email: String = ""
+    var buyerInfoModel: BuyerInfoModel
     let mainInfo: HotelMainInfoModel
     let details: [BookingDetailModel]
     let price: String
@@ -11,6 +10,7 @@ struct HotelBookingScreenModel {
     
     static var example: Self {
         HotelBookingScreenModel(
+            buyerInfoModel: .init(),
             mainInfo: .example,
             details: BookingDetailModel.details,
             price: "186 600 ₽",

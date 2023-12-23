@@ -21,7 +21,7 @@ struct BookingScreen: View {
                         .cornerRadius(12)
                     
                     BookingDetailsList(details: viewModel.model.details)
-                    BuyerInfoView(phoneNumber: $viewModel.model.phoneNumber, email: $viewModel.model.email)
+                    BuyerInfoView(model: $viewModel.model.buyerInfoModel)
                     touristsView
                     AddTouristButton(action: viewModel.addNewTourist)
                     BookingDetailsList(details: viewModel.model.expenses, textAlignment: .trailing)
