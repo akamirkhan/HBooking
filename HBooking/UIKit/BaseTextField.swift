@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct BaseTextField: View {
-    @FocusState private var isFocused: Bool
+    @FocusState var isFocused: Bool
     @Binding var text: String
     @Binding var isDataValid: Bool
     

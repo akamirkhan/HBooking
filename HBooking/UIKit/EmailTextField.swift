@@ -3,13 +3,11 @@ import SwiftUI
 struct EmailTextField: View {
     @Binding var model: BuyerInfoModel
     
-    let title: String
-    
     var body: some View {
         BaseTextField(
             text: $model.email,
             isDataValid: $model.isEmailValid,
-            title: title
+            title: "Почта"
         ) { isFocused in
             if isFocused {
                 model.isEmailValid = true
@@ -28,6 +26,6 @@ struct EmailTextField: View {
 
 #Preview {
     StatefulPreviewWrapper(BuyerInfoModel()) { model in
-        EmailTextField(model: model, title: "Почта")
+        EmailTextField(model: model)
     }
 }
