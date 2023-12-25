@@ -3,13 +3,11 @@
 
 #### Preview
 
-<table border=0>
-    <tr>
-        <td>
-            <video src=https://github.com/akamirkhan/HBooking/example.mp4 width=230 align=center>
-        </td>
-    </tr>
-</table>
+
+
+https://github.com/akamirkhan/HBooking/assets/112726047/69532816-cf25-4f81-bbec-0ebb9b91d057
+
+
 
 |Architecture|Description|
 |-|-|
