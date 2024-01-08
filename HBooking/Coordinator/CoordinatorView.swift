@@ -9,11 +9,21 @@ struct CoordinatorView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: Screen.self) { screen in
                     coordinator.build(screen: screen)
+                        .navigationBarBackButtonHidden(true)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button(action: {
+                                    coordinator.dismiss()
+                                }) {
+                                    Image(systemName: "chevron.backward")
+                                }
+                            }
+                        }
                 }
         }
         .tint(.black)
     }
-
+    
 }
 
 #Preview {

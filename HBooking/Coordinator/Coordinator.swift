@@ -12,6 +12,10 @@ final class Coordinator: ObservableObject {
         path.append(screen)
     }
     
+    func dismiss() {
+        path.removeLast()
+    }
+    
     func popToRoot() {
         path.removeLast(path.count)
     }
