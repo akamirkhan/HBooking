@@ -18,7 +18,7 @@ https://github.com/akamirkhan/HBooking/assets/112726047/69532816-cf25-4f81-bbec-
 |1|[KingFisher](https://github.com/onevcat/Kingfisher)|A library for downloading and caching images from the web.|
 
 #### Getting Started
-1. Clone this repo: ``` https://github.com/akamirkhan/HBooking ```
+1. Clone this repo: ``` https://github.com/akamirkhan/HBooking.git ```
 2. Open project
 
 > Requirements
